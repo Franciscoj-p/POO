@@ -28,6 +28,7 @@ int main() {
 
     Recipiente r1(r, H);
     Reporte rep;
+    
     rep.mostrarResultados(r1.calcularVolumenTotal());
 
     return 0;
