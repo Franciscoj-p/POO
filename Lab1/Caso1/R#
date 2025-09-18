@@ -1,0 +1,7 @@
+R1. El sistema debe registrar el radio (r) y la altura máxima (H) del recipiente cilíndrico, ambos positivos.
+R2. El sistema debe registrar la altura de llenado (h) y validar que cumpla 0 ≤ h ≤ H.
+R3. El sistema debe calcular el volumen total del recipiente usando V = π r^2 H.
+R4. El sistema debe calcular el volumen de leche recogida usando V = π r^2 h.
+R5. El sistema debe mostrar resultados en m³ y en litros (1 m³ = 1000 L).
+R6. El sistema debe presentar mensajes claros y entendibles al usuario.
+R7. El diseño debe permitir, en el futuro, manejar múltiples lecturas o varios recipientes sin alterar la lógica central.
