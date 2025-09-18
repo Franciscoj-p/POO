@@ -1,0 +1,5 @@
+R1. El sistema debe registrar ventas de viernes, sábado y domingo.
+R2. Las ventas deben ser valores no negativos.
+R3. El sistema debe calcular el total de ventas y la comisión (10%).
+R4. El sistema debe calcular el salario = 200000 + comisión.
+R5. El sistema debe mostrar resultados de forma clara: ventas, total, comisión y salario.

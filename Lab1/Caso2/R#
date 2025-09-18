@@ -1,0 +1,5 @@
+R1. El sistema debe registrar las calificaciones de Proyecto, Exposición, Talleres y Parcial.
+R2. Cada calificación debe estar dentro de la escala definida (ej. 0-5).
+R3. El sistema debe calcular la nota final con pesos fijos (30%, 20%, 30%, 20%).
+R4. El sistema debe mostrar la nota final con dos decimales.
+R5. El diseño debe permitir cambiar escala o porcentajes en el futuro sin alterar la lógica.
