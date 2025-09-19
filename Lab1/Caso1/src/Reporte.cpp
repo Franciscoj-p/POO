@@ -5,8 +5,10 @@ double Reporte::convertirALitros(double volumen) {
     return volumen * 1000;
 }
 
-void Reporte::mostrarResultados(double volumen) {
-    std::cout << "Volumen total (m³): " << volumen << std::endl;
-    std::cout << "Cantidad maxima de leche (L): " << convertirALitros(volumen) << std::endl;
+void Reporte::mostrarResultados(const std::vector<double>& volumenes) {
+    std::cout << "Volumen maximo del recipiente (m³): " << volumenes[0] << std::endl;
+    std::cout << "Volumen de leche en el recipiente (m³): " << volumenes[1] << std::endl;
+    std::cout << "Cantidad maxima de leche (L): " << convertirALitros(volumenes[0]) << std::endl;
+    std::cout << "Cantidad de leche en el recipiente (L): " << convertirALitros(volumenes[1]) << std::endl;
 }
 
