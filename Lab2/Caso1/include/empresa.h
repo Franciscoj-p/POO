@@ -13,5 +13,6 @@ public:
     Empresa(const std::string& nombre, int valorHora);
     int calcularNomina() const;
     void registrarEmpleado(const Empleado&);
+    int getValorHora() const;
 };
 #endif 

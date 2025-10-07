@@ -12,10 +12,10 @@ private:
     int horasTrabajadas;
 public:
     Empleado(const std::string& nombre, const std::string& id, Fecha fechaNacimiento, Fecha antiguedad);
-    void registrarHoras();
-    int calcularSalario(int valorHora);
-    int calcularEdad();
-    int calcularAntiguedad();
+    void registrarHoras(int horas);
+    int calcularSalario(int valorHora)const;
+    int calcularEdad(const Fecha& actual)const;
+    int calcularAntiguedad(const Fecha& actual)const;
 
 };
 #endif
