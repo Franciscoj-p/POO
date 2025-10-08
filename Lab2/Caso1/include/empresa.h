@@ -9,7 +9,6 @@ private:
     std::string nombre;
     std::vector<Empleado> empleados;
     int valorHora;
-    Empleado empleadoViejo;
 public:
     Empresa(const std::string& nombre, int valorHora);
     int calcularNomina() const;
