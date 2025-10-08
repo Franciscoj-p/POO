@@ -9,10 +9,14 @@ private:
     std::string nombre;
     std::vector<Empleado> empleados;
     int valorHora;
+    Empleado empleadoViejo;
 public:
     Empresa(const std::string& nombre, int valorHora);
     int calcularNomina() const;
     void registrarEmpleado(const Empleado&);
     int getValorHora() const;
+    Empleado calcularEmpleadoViejo() const;
+    const std::vector<Empleado>& getEmpleados() const;
+
 };
 #endif 
