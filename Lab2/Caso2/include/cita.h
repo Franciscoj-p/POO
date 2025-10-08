@@ -12,6 +12,7 @@ private:
     Paciente paciente;
     Fecha fecha;
 public:
+    Cita();
     Cita(Doctor doctor, Paciente paciente, Fecha f);
     void reportar();
 };

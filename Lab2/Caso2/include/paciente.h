@@ -11,6 +11,7 @@ private:
     std::string correo;
     int edad;
 public:
+    Paciente();
     Paciente(
         int edad, 
         const std::string& nombre, 
@@ -19,5 +20,6 @@ public:
         const std::string& correo, 
         const std::string& motivoConsulta);
     void verInfo() const;
+    std::string getNombre() const;
 };
 #endif 

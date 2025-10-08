@@ -8,10 +8,12 @@ private:
     std::string especialidad;
     std::string id;
 public:
+    Doctor();
     Doctor(
         const std::string& nombre, 
         const std::string& especialidad, 
         const std::string& id);
     void verInfo() const;
+    std::string getNombre() const;
 };
 #endif 

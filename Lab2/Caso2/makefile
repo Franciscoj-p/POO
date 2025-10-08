@@ -7,7 +7,7 @@ SRC = src
 BIN = bin
 
 # Archivos fuente
-SRCS = $(SRC)/main.cpp $(SRC)/cita.cpp $(SRC)/consultorio.cpp $(SRC)/doctor.cpp $(SRC)/paciente.cpp
+SRCS = $(SRC)/main.cpp $(SRC)/cita.cpp $(SRC)/consultorio.cpp $(SRC)/doctor.cpp $(SRC)/paciente.cpp $(SRC)/fecha.cpp 
 
 # Ejecutable
 EXEC = $(BIN)/caso2
