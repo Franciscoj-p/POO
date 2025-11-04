@@ -1,21 +1,24 @@
-# Compilador
+#comp y flags
 CXX = g++
 CXXFLAGS = -Wall -std=c++03 -Iinclude
-
-# Directorios
+#directorios
 SRC = src
 BIN = bin
+#archivos fuente
+SRCS = $(SRC)/main.cpp \
+       $(SRC)/cita.cpp \
+       $(SRC)/consultorio.cpp \
+       $(SRC)/doctor.cpp \
+       $(SRC)/paciente.cpp \
+       $(SRC)/fecha.cpp \
+       $(SRC)/agenda.cpp \
+	   $(SRC)/sistemaConsultorio.cpp
 
-# Archivos fuente
-SRCS = $(SRC)/main.cpp $(SRC)/cita.cpp $(SRC)/consultorio.cpp $(SRC)/doctor.cpp $(SRC)/paciente.cpp $(SRC)/fecha.cpp 
+#archivo ejecutable
+EXEC = $(BIN)/consultorio
 
-# Ejecutable
-EXEC = $(BIN)/caso2
-
-all: $(EXEC)
-
-$(EXEC): $(SRCS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+all:
+	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS)
 
 clean:
-	rm -f $(BIN)/*
+	rm -f $(EXEC)
