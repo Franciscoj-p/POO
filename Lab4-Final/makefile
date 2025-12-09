@@ -7,7 +7,17 @@ SRC = src
 BIN = bin
 
 # Archivos fuente
-SRCS = $(SRC)/main.cpp $(SRC)/arma.cpp $(SRC)/espada.cpp $(SRC)/arco.cpp $(SRC)/hacha.cpp $(SRC)/cuchillo.cpp
+SRCS = $(SRC)/main.cpp \
+	$(SRC)/arma.cpp \
+	$(SRC)/espada.cpp \
+	$(SRC)/arco.cpp \
+	$(SRC)/hacha.cpp \
+	$(SRC)/cuchillo.cpp \
+	$(SRC)/armadura.cpp \
+	$(SRC)/armaduraPesada.cpp \
+	$(SRC)/armaduraLiviana.cpp \
+	$(SRC)/armaduraNormal.cpp \
+	$(SRC)/parteCuerpo.cpp \
 
 # Ejecutable
 EXEC = $(BIN)/main

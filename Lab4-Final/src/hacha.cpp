@@ -10,5 +10,5 @@ Hacha::Hacha(int dur, int dmg, float p, float prec)
 }
 
 std::string Hacha::describir() const {
-    return "Pesada y poderosa, dificil de manejar";
+    return "Un Hacha pesada y poderosa, dificil de manejar";
 }
