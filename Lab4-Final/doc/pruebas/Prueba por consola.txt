@@ -1,0 +1,96 @@
+Elige tu arma: 1. Espada 2. Hacha 3. Arco 4. Cuchillo: 3
+Arma equipada: Una arco ligero, su precision depende de la habilidad del portador.
+Elige tu armadura: 1. Pesada 2. Normal 3. Liviana: 1
+Armadura equipada: Armadura Pesada: Ofrece muy buena protección aunque baja movilidad.
+Oponente elige arma: 4
+Arma equipada: Cuchillo confiable, ligero y preciso
+Oponente elige armadura: 2
+Armadura equipada: Una armadura estándar que ofrece un equilibrio entre protección y movilidad.
+Elige una accion (Atacar/Defender): Atacar
+Elige dónde atacar (cabeza/torso/brazos/piernas): Cabeza
+Oponente defiende piernas
+======================================
+Usuario ataca a Oponente en cabeza con 60 daño
+======================================
+Estado de Oponente:
+Vida: 222 / 300
+Estado: VIVA
+=== Estado del Cuerpo ===
+Parte del Cuerpo: cabeza
+Integridad: 21
+Armadura equipada. Durabilidad: 129
+------------------------
+Parte del Cuerpo: torso
+Integridad: 140
+Armadura equipada. Durabilidad: 129
+------------------------
+Parte del Cuerpo: brazos
+Integridad: 80
+Armadura equipada. Durabilidad: 129
+Arma equipada. Daño: 35
+------------------------
+Parte del Cuerpo: piernas
+Integridad: 90
+Armadura equipada. Durabilidad: 129
+------------------------
+Elige una accion (Atacar/Defender): Atacar
+Elige dónde atacar (cabeza/torso/brazos/piernas): Cabeza
+Usuario falla el ataque a Oponente en cabeza
+======================================
+Oponente falla el ataque a Usuario en cabeza
+======================================
+Elige una accion (Atacar/Defender): Atacar
+Elige dónde atacar (cabeza/torso/brazos/piernas): Cabeza
+Usuario falla el ataque a Oponente en cabeza
+======================================
+Oponente ataca a Usuario en piernas con 35 daño
+======================================
+Estado de Usuario:
+Vida: 287.75 / 300
+Estado: VIVA
+=== Estado del Cuerpo ===
+Parte del Cuerpo: cabeza
+Integridad: 60
+Armadura equipada. Durabilidad: 232.5
+------------------------
+Parte del Cuerpo: torso
+Integridad: 140
+Armadura equipada. Durabilidad: 232.5
+------------------------
+Parte del Cuerpo: brazos
+Integridad: 80
+Armadura equipada. Durabilidad: 232.5
+Arma equipada. Daño: 60
+------------------------
+Parte del Cuerpo: piernas
+Integridad: 72.5
+Armadura equipada. Durabilidad: 232.5
+------------------------
+Elige una accion (Atacar/Defender): Atacar
+Elige dónde atacar (cabeza/torso/brazos/piernas): Cabeza
+Usuario ataca a Oponente en cabeza con 60 daño
+======================================
+Estado de Oponente:
+Vida: 0 / 300
+Estado: MUERTA
+=== Estado del Cuerpo ===
+Parte del Cuerpo: cabeza
+Integridad: -18
+Armadura equipada. Durabilidad: 108
+------------------------
+Parte del Cuerpo: torso
+Integridad: 140
+Armadura equipada. Durabilidad: 108
+------------------------
+Parte del Cuerpo: brazos
+Integridad: 80
+Armadura equipada. Durabilidad: 108
+Arma equipada. Daño: 35
+------------------------
+Parte del Cuerpo: piernas
+Integridad: 90
+Armadura equipada. Durabilidad: 108
+------------------------
+Oponente falla el ataque a Usuario en cabeza
+======================================
+¡Has ganado el combate!

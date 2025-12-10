@@ -16,6 +16,9 @@
  * Profesor, siguiendo la recomendación de acotar el proyecto por la fecha, 
  * prioricé implementar completamente el flujo de combate por turnos de inicio a fin, con cálculo de probabilidades, daño, degradación y mensajes 
  * Dejé algunas características planeadas en la documentacion fuera de esta versión para garantizar un sistema estable, probado y alineado con el objetivo principal del trabajo.
+ * 
+ * quiza el juego este desbalanceado o facil, pero los parametros de daño y multiplicadores se pueden ajustar facilmente en balance.h
+ * Tambien la "IA" del oponente es muy basica, se mantene a base de valores aleatorios
  */
 
 int main() {

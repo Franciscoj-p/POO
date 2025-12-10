@@ -7,8 +7,6 @@
  * lo hice para no tener que cambiar en el cpp todos los parametros en cada clase para ajustes de balance
  * 
  * 
- * 
- * 
  **/ 
 
 // ===== ENTIDAD =====
