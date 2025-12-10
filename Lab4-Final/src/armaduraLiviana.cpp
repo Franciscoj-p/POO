@@ -1,10 +1,10 @@
 #include "../include/armaduraLiviana.h"
+#include "../include/balance.h"
 
 ArmaduraLiviana::ArmaduraLiviana() 
 : Armadura() {
-    durabilidad = 100.0f;
-    dañoAbs = 0.3f; //absorbe el 30% del daño
-    reduccionMovimiento = 0.1f; //reduce la velocidad en un 10%
+    durabilidad = LIVIANA_DURABILIDAD;
+    dañoAbs = LIVIANA_DAÑO_ABS; 
 }
 
 std::string ArmaduraLiviana::describir() const {

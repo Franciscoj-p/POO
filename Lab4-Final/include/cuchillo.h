@@ -6,7 +6,7 @@
 
 class Cuchillo : public Arma {
     public:
-        Cuchillo(int dur, int dmg, float p, float prec);
+        Cuchillo();
         virtual std::string describir() const;
 };
 

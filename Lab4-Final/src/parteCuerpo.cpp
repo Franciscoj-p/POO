@@ -1,11 +1,14 @@
 #include "../include/parteCuerpo.h"
+#include "../include/arma.h"
+#include "../include/armadura.h"
 #include <iostream>
 
 ParteCuerpo::ParteCuerpo() :
     nombre(""),
-    integridad(100.0f),
+    integridad(0.0f),
     dañoLocal(0.0f),
     llevaArma(false),
+    arma(0),
     armadura(0)
 {}
 
@@ -13,21 +16,21 @@ std::string ParteCuerpo::getNombre() const { return nombre; }
 
 float ParteCuerpo::getIntegridad() const { return integridad; }
 
-bool ParteCuerpo::getLlevaArma() const { return llevaArma; }
-
 float ParteCuerpo::getDañoLocal() const { return dañoLocal; }
 
-Armadura* ParteCuerpo::getArmadura() const { return armadura; }
-
-void ParteCuerpo::recibirDaño(float daño){
+const Armadura* ParteCuerpo::getArmadura() const { return armadura; }
+/** Método para que la parte del cuerpo reciba daño, aplicando la armadura si está equipada.
+  Devuelve el daño efectivo recibido después de aplicar la armadura y el multiplicador local.
+  además reduce la integridad de la parte del cuerpo según el daño recibido luego de la mitigación de la armadura.
+   */
+float ParteCuerpo::recibirDaño(float daño){
     float dañoRecibido = daño;
-    if (armadura) {
+    if (armadura && armadura->getDurabilidad() > 0) {
         dañoRecibido = armadura->calcularDaño(daño);
-        armadura->reducirDurabilidad(daño * 0.1f); 
+        armadura->reducirDurabilidad(daño - dañoRecibido);
     }
     integridad -= dañoRecibido;
-    if (integridad < 0) integridad = 0;
-    dañoLocal += dañoRecibido;
+    return dañoRecibido * dañoLocal;
 }
 
 void ParteCuerpo::equiparArmadura(Armadura* a){
@@ -37,8 +40,6 @@ void ParteCuerpo::equiparArmadura(Armadura* a){
 void ParteCuerpo::mostrarEstado() const{
     std::cout << "Parte del Cuerpo: " << nombre << std::endl;
     std::cout << "Integridad: " << integridad << std::endl;
-    std::cout << "Daño Local: " << dañoLocal << std::endl;
-    std::cout << "Lleva Arma: " << (llevaArma ? "Sí" : "No") << std::endl;
     if (armadura) {
         std::cout << "Armadura equipada. Durabilidad: " << armadura->getDurabilidad() << std::endl;
     } else {
@@ -47,3 +48,15 @@ void ParteCuerpo::mostrarEstado() const{
 }
 
 ParteCuerpo::~ParteCuerpo() {}
+
+bool ParteCuerpo::getLlevaArma() const { return llevaArma; }
+
+bool ParteCuerpo::estaFuncional() const { return integridad > 0; }
+
+const Arma* ParteCuerpo::getArma() const { return arma; }
+
+void ParteCuerpo::equiparArma(Arma* a) { 
+    if (llevaArma) {
+        arma = a;
+    }
+ }

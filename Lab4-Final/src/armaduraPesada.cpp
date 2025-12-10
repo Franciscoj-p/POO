@@ -1,10 +1,10 @@
 #include "../include/armaduraPesada.h"
+#include "../include/balance.h"
 
 ArmaduraPesada::ArmaduraPesada() 
 : Armadura() {
-    durabilidad = 200.0f;
-    dañoAbs = 0.65f; //absorbe el 65% del daño
-    reduccionMovimiento = 0.4f; //reduce la velocidad en un 40%
+    durabilidad = PESADA_DURABILIDAD;
+    dañoAbs = PESADA_DAÑO_ABS; 
 }
 
 std::string ArmaduraPesada::describir() const {

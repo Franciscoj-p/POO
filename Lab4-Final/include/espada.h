@@ -15,7 +15,7 @@
  */
 class Espada : public Arma {
 public:
-    Espada(int dur, int dmg, float p, float prec);
+    Espada();
     //método abstracto
     virtual std::string describir() const;
 };

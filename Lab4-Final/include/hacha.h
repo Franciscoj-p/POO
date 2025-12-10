@@ -6,7 +6,7 @@
 
 class Hacha : public Arma {
 public:
-    Hacha(int dur, int dmg, float p, float prec);
+    Hacha();
     virtual std::string describir() const;
 };
 

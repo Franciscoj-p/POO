@@ -1,11 +1,10 @@
 #include "../include/arco.h"
+#include "../include/balance.h"
 
-Arco::Arco(int dur, int dmg, float p, float prec)
-    : Arma(dur, dmg, p, prec)
-{
-    dañoAtaque += 10;
-    peso = 20.0;
-    precision = prec;  
+Arco::Arco()
+: Arma() {
+    dañoAtaque = ARCO_DAÑO;
+    precision = ARCO_PRECISION;  
 }
 
 std::string Arco::describir() const {

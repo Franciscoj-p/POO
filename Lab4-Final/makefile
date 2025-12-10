@@ -18,6 +18,12 @@ SRCS = $(SRC)/main.cpp \
 	$(SRC)/armaduraLiviana.cpp \
 	$(SRC)/armaduraNormal.cpp \
 	$(SRC)/parteCuerpo.cpp \
+	$(SRC)/cabeza.cpp \
+	$(SRC)/torso.cpp \
+	$(SRC)/brazos.cpp \
+	$(SRC)/piernas.cpp \
+	$(SRC)/cuerpo.cpp \
+	$(SRC)/entidad.cpp
 
 # Ejecutable
 EXEC = $(BIN)/main

@@ -6,6 +6,12 @@
 #include "../include/armaduraPesada.h"
 #include "../include/armaduraLiviana.h"
 #include "../include/armaduraNormal.h"
+#include "../include/torso.h"
+#include "../include/cabeza.h"
+#include "../include/brazos.h"
+#include "../include/piernas.h"
+#include "../include/cuerpo.h"
+#include "../include/entidad.h"
 /**
  * @brief Main para pruebas de escritorio de las clases de armas del laboratorio 4.
  *
@@ -17,107 +23,50 @@
  */
 int main() {
 
-    int durabilidadInicial = 100;     // Qué tanto aguanta antes de romperse
-    int dañoBase = 100;               // Daño del golpe
-    float pesoArma = 0;            // Qué tan pesada es en kg
-    float precisionBase = 0;      // Probabilidad base de acertar, porcentaje
+    Arma* espada = new Espada();
+    Armadura* armadura = new ArmaduraPesada();
 
-    Arma* Espada1 = new Espada(
-        durabilidadInicial,
-        dañoBase,
-        pesoArma,
-        precisionBase
-    );
+    Entidad* entidad = new Entidad();
+    entidad->equiparArma(espada);
+    entidad->equiparArmadura(armadura);
 
-    Arma* Hacha1 = new Hacha(
-        durabilidadInicial,
-        dañoBase,
-        pesoArma,
-        precisionBase
-    );
+    // ===== ESTADO INICIAL =====
+    std::cout << "ESTADO INICIAL" << std::endl;
+    std::cout << "==========================" << std::endl;
 
-    Arma* Cuchillo1 = new Cuchillo(
-        durabilidadInicial,
-        dañoBase,
-        pesoArma,
-        precisionBase
-    );
-    Arma* Arco1 = new Arco(
-        durabilidadInicial,
-        dañoBase,
-        pesoArma,
-        precisionBase //en un caso real esta variable se calcula segun los atributos de la entidad
-    );
-    
-    // Demostración del polimorfismo
-    std::cout << "Descripcion del arma: " << Espada1->describir() << std::endl;
-    std::cout << "Durabilidad: " << Espada1->getDurabilidad() << std::endl;
-    std::cout << "Daño de Ataque: " << Espada1->getDañoAtaque() << std::endl;
-    std::cout << "Peso: " << Espada1->getPeso() << "kg" << std::endl;
-    std::cout << "Precisión: " << Espada1->getPrecision() << "%" << std::endl;  
-    
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion del arma: " << Hacha1->describir() << std::endl;
-    std::cout << "Durabilidad: " << Hacha1->getDurabilidad() << std::endl;
-    std::cout << "Daño de Ataque: " << Hacha1->getDañoAtaque() << std::endl;
-    std::cout << "Peso: " << Hacha1->getPeso() << "kg" << std::endl;
-    std::cout << "Precisión: " << Hacha1->getPrecision() << "%" << std::endl;
+    // ===== PRUEBA 1: impacto leve a cabeza =====
+    std::cout << "Golpe leve a cabeza (30)" << std::endl;
+    entidad->recibirDañoEn("cabeza", 30);
+    std::cout << "==========================" << std::endl;
 
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion del arma: " << Cuchillo1->describir() << std::endl;
-    std::cout << "Durabilidad: " << Cuchillo1->getDurabilidad() << std::endl;
-    std::cout << "Daño de Ataque: " << Cuchillo1->getDañoAtaque() << std::endl;
-    std::cout << "Peso: " << Cuchillo1->getPeso() << "kg" << std::endl;
-    std::cout << "Precisión: " << Cuchillo1->getPrecision() << "%" << std::endl;
+    // ===== PRUEBA 2: daño medio a extremidad =====
+    std::cout << "Golpe medio a brazos (60)" << std::endl;
+    entidad->recibirDañoEn("brazos", 60);
+    std::cout << "==========================" << std::endl;
 
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion del arma: " << Arco1->describir() << std::endl;
-    std::cout << "Durabilidad: " << Arco1->getDurabilidad() << std::endl;
-    std::cout << "Daño de Ataque: " << Arco1->getDañoAtaque() << std::endl;
-    std::cout << "Peso: " << Arco1->getPeso() << "kg" << std::endl;
-    std::cout << "Precisión: " << Arco1->getPrecision() << "% ???" << std::endl;
+    // ===== PRUEBA 3: daño fuerte a torso (armadura aún activa) =====
+    std::cout << "Golpe fuerte a torso (100)" << std::endl;
+    entidad->recibirDañoEn("torso", 100);
+    std::cout << "==========================" << std::endl;
 
-    //pruebas para armadura
+    // ===== PRUEBA 4: destruir armadura =====
+    std::cout << "Golpe masivo a torso (200)" << std::endl;
+    entidad->recibirDañoEn("torso", 200);
+    std::cout << "==========================" << std::endl;
 
-    Armadura* Armadura1 = new ArmaduraPesada();
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion de la armadura: " << Armadura1->describir() << std::endl;
-    std::cout << "Durabilidad: " << Armadura1->getDurabilidad() << std::endl;
-    std::cout << "Daño Absorbido: " << 100 * (Armadura1->getDañoAbs()) << "%" << std::endl;
-    std::cout << "Reducción de Movimiento: " << 100 * (Armadura1->getReduccionMovimiento()) << "%" << std::endl;
-    Armadura1->reducirDurabilidad(30);
-    std::cout << "Durabilidad después de recibir 30 de daño: " << Armadura1->getDurabilidad() << std::endl;
-    Armadura1->calcularDaño(100);
-    std::cout << "Daño recibido después de la absorción de la armadura (daño base 100): " << Armadura1->calcularDaño(100) << std::endl;
+    // ===== PRUEBA 5: daño sin armadura =====
+    std::cout << "Golpe directo a cabeza sin armadura (40)" << std::endl;
+    entidad->recibirDañoEn("cabeza", 40);
+    std::cout << "==========================" << std::endl;
 
-    Armadura* Armadura2 = new ArmaduraLiviana();
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion de la armadura: " << Armadura2->describir() << std::endl;
-    std::cout << "Durabilidad: " << Armadura2->getDurabilidad() << std::endl;
-    std::cout << "Daño Absorbido: " << 100 * (Armadura2->getDañoAbs()) << "%" << std::endl;
-    std::cout << "Reducción de Movimiento: " << 100 * (Armadura2->getReduccionMovimiento()) << "%" << std::endl;
-    Armadura2->reducirDurabilidad(30);
-    std::cout << "Durabilidad luego de recibir 30 de daño: " << Armadura2->getDurabilidad() << std::endl;
-    Armadura2->calcularDaño(100);
-    std::cout << "Daño recibido luego de la absorción de la armadura (daño base 100): " << Armadura2->calcularDaño(100) << std::endl;
+    // ===== PRUEBA FINAL: golpe letal =====
+    std::cout << "Golpe letal a cabeza (80)" << std::endl;
+    entidad->recibirDañoEn("cabeza", 80);
+    std::cout << "==========================" << std::endl;
 
-    Armadura* Armadura3 = new ArmaduraNormal();
-    std::cout << "----------------------------------------" << std::endl;
-    std::cout << "Descripcion de la armadura: " << Armadura3->describir() << std::endl;
-    std::cout << "Durabilidad: " << Armadura3->getDurabilidad() << std::endl;
-   std::cout << "Daño Absorbido: " << 100 * (Armadura3->getDañoAbs()) << "%" << std::endl;
-    std::cout << "Reducción de Movimiento: " << 100 * (Armadura3->getReduccionMovimiento()) << "%" << std::endl;
-    Armadura3->reducirDurabilidad(30);
-    std::cout << "Durabilidad luego de recibir 30 de daño: " << Armadura3->getDurabilidad() << std::endl;
-    Armadura3->calcularDaño(100);
-    std::cout << "Daño recibido luego de la absorción de la armadura (daño base 100): " << Armadura3->calcularDaño(100) << std::endl;
+    delete entidad;
+    delete espada;
+    delete armadura;
 
-    delete Hacha1;
-    delete Cuchillo1;
-    delete Arco1;
-    delete Espada1;
-    delete Armadura1;
-    delete Armadura2;
-    delete Armadura3;   
     return 0;
 }

@@ -1,12 +1,10 @@
 #include "../include/espada.h"
+#include "../include/balance.h"
 
-Espada::Espada(int dur, int dmg, float p, float prec)
-    : Arma(dur, dmg, p, prec)
-{
-    dañoAtaque += 10;   // Ajuste propio de Espada, se hace asi gracias a protected
-    durabilidad += 10;
-    peso = 30.0;
-    precision = 60.0;  
+Espada::Espada()
+: Arma() {
+    dañoAtaque = ESPADA_DAÑO;
+    precision = ESPADA_PRECISION;  
 }
 
 std::string Espada::describir() const {

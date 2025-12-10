@@ -3,8 +3,7 @@
 
 #include "parteCuerpo.h"
 
-class Cabeza : public ParteCuerpo
-{
+class Cabeza : public ParteCuerpo{
 	public:
 		Cabeza();
 };

@@ -6,31 +6,24 @@
  * @file arma.h
  * @brief Declaración de la clase base Arma y sus atributos y métodos principales.
  * @brief aporta valores como daño base, precisión, peso y durabilidad. El SistemaDeBatalla usa esos valores en sus cálculos.
+ * para acotar el proyecto, las armas no se degradan con el uso, ni el peso influye en nada
  *
- *
- * @param durabilidad tanto aguanta antes de romperse
+ * 
+ * 
  * @param dañoAtaque daño del golpe
- * @param peso qué tan pesada es en kg
  * @param precision probabilidad base de acertar, porcentaje
  * 
  */
 
 class Arma {
 protected:
-    int durabilidad;
-    int dañoAtaque;
-    float peso;
+    float dañoAtaque;
     float precision;
 
 public:
-    Arma(int dur, int dmg, float p, float prec);
-    // Destructor virtual
+    Arma();
     virtual ~Arma();
-
-    // Métodos getters simples
-    int getDurabilidad() const;
-    int getDañoAtaque() const;
-    float getPeso() const;
+    float getDañoAtaque() const;
     float getPrecision() const;
     virtual std::string describir() const;
 };

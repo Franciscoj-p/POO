@@ -6,7 +6,7 @@
 
 class Arco : public Arma {
 public:
-    Arco(int dur, int dmg, float p, float prec);
+    Arco();
     virtual std::string describir() const;
 };
 
