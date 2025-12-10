@@ -29,10 +29,15 @@ public:
     Entidad();
     ~Entidad();
     void recibirDañoEn(const std::string& nombreParte, float daño);
+    float getAtaque() const;
     void equiparArma(Arma* a);
     void equiparArmadura(Armadura* a);
     bool estaViva() const;
     void mostrarEstado() const;
+    Arma* getArma() const;
+    Cuerpo* getCuerpo() const;
+    void defenderParte(const std::string& nombreParte);
+    Armadura* getArmadura() const;
 };
 
 #endif

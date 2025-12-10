@@ -71,3 +71,24 @@ bool Cuerpo::brazosEstaFuncional() const {
 bool Cuerpo::piernasEstaFuncional() const {
     return partes[3]->estaFuncional();
 }
+
+float Cuerpo::getModificadorPrecision(const std::string& nombreParte) {
+    ParteCuerpo* parte = obtenerParte(nombreParte);
+    if (parte) {
+        return parte->getModificadorPrecision();
+    }
+    return 1.0f; // valor por defecto si la parte no existe
+}
+
+void Cuerpo::defenderParte(const std::string& nombreParte) {
+    ParteCuerpo* parte = obtenerParte(nombreParte);
+    if (parte) {
+        parte->defender();
+    }
+}
+
+void Cuerpo::resetDefensas() {
+    for (size_t i = 0; i < partes.size(); ++i) {
+        partes[i]->resetDefensa();
+    }
+}

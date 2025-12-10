@@ -23,7 +23,10 @@ SRCS = $(SRC)/main.cpp \
 	$(SRC)/brazos.cpp \
 	$(SRC)/piernas.cpp \
 	$(SRC)/cuerpo.cpp \
-	$(SRC)/entidad.cpp
+	$(SRC)/entidad.cpp \
+	$(SRC)/turno.cpp \
+	$(SRC)/sistemaBatalla.cpp \
+	$(SRC)/UI.cpp
 
 # Ejecutable
 EXEC = $(BIN)/main

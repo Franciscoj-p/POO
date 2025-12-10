@@ -8,4 +8,5 @@ Cabeza::Cabeza()
     llevaArma = false; 
     nombre = "cabeza";  
     armadura = 0;
+    modificadorPrecision = CABEZA_MOD_PRECISION;
 }

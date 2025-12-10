@@ -9,7 +9,8 @@ ParteCuerpo::ParteCuerpo() :
     dañoLocal(0.0f),
     llevaArma(false),
     arma(0),
-    armadura(0)
+    armadura(0),
+    modificadorPrecision(0.0f)
 {}
 
 std::string ParteCuerpo::getNombre() const { return nombre; }
@@ -24,13 +25,18 @@ const Armadura* ParteCuerpo::getArmadura() const { return armadura; }
   además reduce la integridad de la parte del cuerpo según el daño recibido luego de la mitigación de la armadura.
    */
 float ParteCuerpo::recibirDaño(float daño){
-    float dañoRecibido = daño;
-    if (armadura && armadura->getDurabilidad() > 0) {
-        dañoRecibido = armadura->calcularDaño(daño);
-        armadura->reducirDurabilidad(daño - dañoRecibido);
+    if (estaDefendida()) {
+        return 0.0f;
     }
-    integridad -= dañoRecibido;
-    return dañoRecibido * dañoLocal;
+    else {
+        float dañoRecibido = daño;
+        if (armadura && armadura->getDurabilidad() > 0) {
+            dañoRecibido = armadura->calcularDaño(daño);
+            armadura->reducirDurabilidad(daño - dañoRecibido);
+        }
+        integridad -= dañoRecibido;
+        return dañoRecibido * dañoLocal;
+    }
 }
 
 void ParteCuerpo::equiparArmadura(Armadura* a){
@@ -60,3 +66,19 @@ void ParteCuerpo::equiparArma(Arma* a) {
         arma = a;
     }
  }
+
+float ParteCuerpo::getModificadorPrecision() const {
+    return modificadorPrecision;
+}
+
+void ParteCuerpo::defender() {
+    defendida = true;
+}
+
+void ParteCuerpo::resetDefensa() {
+    defendida = false;
+}
+
+bool ParteCuerpo::estaDefendida() const {
+    return defendida;
+}

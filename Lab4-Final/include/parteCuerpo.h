@@ -28,6 +28,8 @@ class ParteCuerpo {
         bool llevaArma;
         Arma* arma;
         Armadura* armadura;
+        float modificadorPrecision;
+        bool defendida;
         
     public: 
         ParteCuerpo();
@@ -43,5 +45,9 @@ class ParteCuerpo {
         virtual void equiparArma(Arma* a);
         bool estaFuncional() const;
         virtual ~ParteCuerpo();
+        float getModificadorPrecision() const;
+        void defender();
+        void resetDefensa();
+        bool estaDefendida() const;
 };
 #endif

@@ -35,6 +35,9 @@ public:
     bool torsoEstaFuncional() const;
     bool brazosEstaFuncional() const;
     bool piernasEstaFuncional() const;
+    float getModificadorPrecision(const std::string& nombreParte);
+    void defenderParte(const std::string& nombreParte);
+    void resetDefensas();
 };
 
 #endif

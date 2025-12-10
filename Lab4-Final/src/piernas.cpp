@@ -8,4 +8,5 @@ Piernas::Piernas()
     llevaArma = false; 
     nombre = "piernas";  
     armadura = 0;
+    modificadorPrecision = PIERNAS_MOD_PRECISION;
 }

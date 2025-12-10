@@ -8,4 +8,5 @@ Torso::Torso()
     llevaArma = false; 
     nombre = "torso";  
     armadura = 0;
+    modificadorPrecision = TORSO_MOD_PRECISION;
 }

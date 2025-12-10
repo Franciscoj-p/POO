@@ -1,6 +1,7 @@
 #include "../include/entidad.h"
 #include "../include/balance.h"
 #include <iostream>
+
 Entidad::Entidad()
     : vida(ENTIDAD_VIDA),
       vidaMaxima(ENTIDAD_VIDA),
@@ -53,9 +54,35 @@ void Entidad::mostrarEstado() const {
 void Entidad::equiparArma(Arma* a) {
     this->arma = a;
     cuerpo->equiparArma(a);
+    std::cout << "Arma equipada: " << a->describir() << std::endl;
 }
 
 void Entidad::equiparArmadura(Armadura* a) {
     this->armadura = a;
     cuerpo->equiparArmadura(a);
+    std::cout << "Armadura equipada: " << a->describir() << std::endl;
+}
+
+float Entidad::getAtaque() const {
+    if (arma) {
+        return arma->getDañoAtaque();
+    } else {
+        return 0.0f; // Sin arma equipada
+    }
+}
+
+Arma* Entidad::getArma() const {
+    return arma;
+}
+
+Cuerpo* Entidad::getCuerpo() const {
+    return cuerpo;
+}
+
+void Entidad::defenderParte(const std::string& nombreParte) {
+    cuerpo->defenderParte(nombreParte);
+}
+
+Armadura* Entidad::getArmadura() const {
+    return armadura;
 }

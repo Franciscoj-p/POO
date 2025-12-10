@@ -10,6 +10,8 @@ Brazos::Brazos()
     llevaArma = true; 
     nombre = "brazos";  
     armadura = 0;
+    arma = 0;
+    modificadorPrecision = BRAZOS_MOD_PRECISION;
 }
 
 void Brazos::mostrarEstado() const {
